@@ -1,19 +1,19 @@
-Mongo Multi DB Transfer
+Mongo Multi DB Transfer (Python)
 
-Copy or rename multiple MongoDB databases between clusters using a streamed mongodump | mongorestore pipeline. Generates a Windows batch file for repeatable runs.
+Copy or rename multiple MongoDB databases between servers using a streamed mongodump | mongorestore pipeline.
 
-What it does
 
-Reads a list of database names from db.dat
+You’ll be prompted for:
 
-Asks for source and target MongoDB connection strings
+SOURCE MongoDB connection string
 
-Lets you choose:
+TARGET MongoDB connection string
 
-Same names on target, or
+Whether to keep names or rename per DB
 
-Custom rename per database (uses --nsFrom/--nsTo)
+The script:
 
-Builds streamed dump→restore commands (--archive --gzip) with --drop
+Prints all mongodump | mongorestore commands to the console
 
-Prints commands to console and writes mongo_copy_commands.bat
+Also saves them to mongo_copy_commands.bat (handy on Windows).
+On Linux/macOS, just copy the printed commands into your shell.
